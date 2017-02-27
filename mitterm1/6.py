@@ -10,3 +10,4 @@ def deep_reverse(L):
     for i in L:
         g.append(i[::-1])
     L[:] = g[::-1]
+
