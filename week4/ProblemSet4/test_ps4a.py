@@ -1,12 +1,10 @@
-from ps4a import *
+from ProblemSet4.ps4a import *
 
 #
 # Test code
 # You don't need to understand how this test code works (but feel free to look it over!)
 
 # To run these tests, simply run this file (open up in your IDE, then run the file as normal)
-from ProblemSet4.ps4a import getWordScore, updateHand, getFrequencyDict, isValidWord
-
 
 def test_getWordScore():
     """

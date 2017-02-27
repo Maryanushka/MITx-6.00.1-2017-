@@ -1,4 +1,4 @@
-from ps4a import *
+from ProblemSet4.ps4a import *
 import time
 
 
@@ -7,6 +7,8 @@ import time
 # Computer chooses a word
 #
 #
+
+
 def compChooseWord(hand, wordList, n):
     """
     Given a hand and a wordList, find the word that gives 
@@ -125,7 +127,38 @@ def playGame(wordList):
     wordList: list (string)
     """
     # TO DO... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this when you code this function
+    while True:
+        user_input = str(input('Enter n to deal a new hand, r to replay the last hand, or e to end game: '))
+        if user_input == 'e':
+            break
+        elif user_input == 'n':
+            while True:
+                user_choise = str(input("Enter u to have yourself play, c to have the computer play: "))
+                if  user_choise == 'u':
+                    hand = dealHand(HAND_SIZE)
+                    playHand(hand, wordList, HAND_SIZE)
+                    break
+                elif user_choise == 'c':
+                    hand = dealHand(HAND_SIZE)
+                    compPlayHand(hand,wordList, HAND_SIZE)
+                    break
+                elif user_choise not in 'uc':
+                    print('Invalid command.')
+        elif user_input == 'r':
+            try:
+                hand
+                user_choise = str(input("Enter u to have yourself play, c to have the computer play: "))
+                if user_choise == 'u':
+                    playHand(hand, wordList, HAND_SIZE)
+                elif user_choise == 'c':
+                    compPlayHand(hand, wordList, HAND_SIZE)
+                else:
+                    print('Invalid command.')
+            except:
+                print('You have not played a hand yet. Please play a new hand first!')
+        elif  user_input not in'enr':
+            print('Invalid command.')
+
 
         
 #
