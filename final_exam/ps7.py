@@ -1,16 +1,3 @@
-def gen_p(l):
-    def to_apply(x):
-        n = 0
-        for i in l:
-            n = x * n + i
-        return n
-
-    return to_apply
-
-
-print(gen_p([1, 2, 3, 4])(10))
-
-
 def general_poly(L):
     """ L, a list of numbers (n0, n1, n2, ... nk)
     Returns a function, which when applied to a value x, returns the value
